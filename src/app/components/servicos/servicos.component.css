@@ -1,0 +1,127 @@
+/* .servicos-container {
+  margin-top: 50px;
+  background: linear-gradient(180deg, #f9f9f9 0%, #f2fdf6 100%);
+  padding: 80px 20px;
+  font-family: "Inter", sans-serif;
+}
+
+.servicos-header {
+  text-align: center;
+  margin-bottom: 60px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.servicos-header h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #008a4f;
+  margin-bottom: 15px;
+  position: relative;
+  display: inline-block;
+}
+
+.servicos-header h1::after {
+  content: "";
+  width: 60px;
+  height: 4px;
+  background: #00a651;
+  display: block;
+  margin: 10px auto 0 auto;
+  border-radius: 2px;
+}
+
+.servicos-header p {
+  font-size: 1.2rem;
+  color: #444;
+  line-height: 1.6;
+} */
+
+/* GRID */
+.servicos-list {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 35px;
+}
+
+/* CARD */
+.servico-item {
+  background: #ffffff;
+  padding: 30px 25px;
+  text-align: left;
+  border-radius: 16px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 1px solid #eaeaea;
+  display: flex;
+  flex-direction: column;
+}
+
+.servico-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0px 12px 28px rgba(0, 166, 81, 0.15);
+  border-color: #00a651;
+}
+
+.servico-item img {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 20px;
+}
+
+.servico-item h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 12px;
+}
+
+.servico-item p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.servico-item ul {
+  padding-left: 20px;
+  margin: 0;
+  list-style: none;
+}
+
+.servico-item ul li {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 8px;
+  position: relative;
+  line-height: 1.4;
+}
+
+/* Bullet customizado */
+.servico-item ul li::before {
+  content: "✔";
+  position: absolute;
+  left: -18px;
+  color: #00a651;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .servicos-header h1 {
+    font-size: 2rem;
+  }
+
+  .servicos-header p {
+    font-size: 1rem;
+  }
+
+  .servico-item {
+    padding: 25px 20px;
+  }
+}

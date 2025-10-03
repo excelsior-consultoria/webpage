@@ -1,0 +1,47 @@
+<header class="header">
+  <div class="container header-content">
+    <!-- Logo -->
+    <img src="assets/Logo_Excelsior.png" alt="Logo" class="logo" [ngStyle]="{ height: (70 - 30 * scrollProgress) + 'px' }" />
+
+    <!-- Botão do menu hamburguer -->
+    <div class="menu-toggle" [class.open]="menuOpen" (click)="toggleMenu()">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+
+    <!-- Menu de navegação -->
+    <!-- <nav class="nav" [class.mobile-nav]="menuOpen">
+      <ul class="nav-list">
+        <li><a routerLink="/" (click)="closeMenu()">Início</a></li>
+        <li><a routerLink="/projects" (click)="closeMenu()">Serviços</a></li>
+        <li><a routerLink="/about" (click)="closeMenu()">Quem somos</a></li>
+        <li><a routerLink="/news" (click)="closeMenu()">Contato</a></li>
+      </ul>
+    </nav> -->
+
+    <nav class="nav-links nav" [class.mobile-nav]="menuOpen">
+      <ul class="nav-list">
+        <li><a routerLink="/home" [class.active]="activeRoute === '/home'"
+            (click)="setActive('/home'); closeMenu()">Home</a></li>
+        <li><a routerLink="/servicos" [class.active]="activeRoute === '/servicos'"
+            (click)="setActive('/servicos'); closeMenu()">Serviços</a></li>
+        <li><a routerLink="/contato" [class.active]="activeRoute === '/contato'"
+            (click)="setActive('/contato'); closeMenu()">Contato</a></li>
+        <li><a routerLink="/sobre" [class.active]="activeRoute === '/sobre'"
+            (click)="setActive('/sobre'); closeMenu()">Sobre</a></li>
+
+
+      </ul>
+
+
+
+
+
+
+
+    </nav>
+  </div>
+
+
+</header>

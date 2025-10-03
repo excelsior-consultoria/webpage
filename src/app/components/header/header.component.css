@@ -1,0 +1,179 @@
+/* Estilo base do header fixo */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: #f3f3f3;
+  z-index: 1000;
+  transition: background-color 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Conteúdo interno com largura limitada */
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+/* Logo com transição de tamanho */
+.logo {
+  height: 70px;
+  transition: height 0.3s ease;
+  margin-left: 1rem;
+}
+
+/* Menu horizontal (desktop) */
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav li a {
+  text-decoration: none;
+  font-weight: 100;
+  color: #313131;
+}
+
+.nav li a:hover {
+  color: #00a651;
+}
+
+/* Botão de menu hambúrguer */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  margin-right: 1rem;
+  z-index: 1001; /* Garantir que o botão apareça acima do menu */
+  transition: transform 0.3s ease; /* Apenas para a transformação suave */
+}
+
+/* Barras do hambúrguer */
+.menu-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+/* Transformação do botão em "X" quando menu está aberto */
+.menu-toggle.open .bar:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px); /* Primeira barra do X (superior) */
+}
+
+.menu-toggle.open .bar:nth-child(2) {
+  opacity: 0; /* Barra do meio desaparece */
+}
+
+.menu-toggle.open .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px); /* Segunda barra do X (inferior) */
+}
+
+/* Estilo mobile */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex; /* O botão aparece apenas em telas pequenas */
+  }
+
+  /* Menu - ajustando para não sobrepor todo o site */
+  .nav {
+    overflow: hidden;
+    max-height: 0; /* Começa escondido */
+    transition: max-height 0.4s ease-in-out; /* Animação suave para descer */
+    flex-direction: column;
+    position: absolute;
+    top: 100%; /* Menu começa logo abaixo do header */
+    left: 0;
+    right: 0;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 0 1rem;
+    z-index: 999;
+  }
+
+  /* Quando o menu está aberto */
+  .nav.mobile-nav {
+    max-height: 300px; /* Quando aberto, o menu tem altura máxima controlada */
+    padding: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .nav-list li {
+    margin: 0.5rem 0;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+
+
+
+
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.nav-links a {
+  position: relative;
+  color: #222222; /* Texto escuro para fundo claro */
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 8px 0;
+  transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #00a651;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a:hover {
+  color: #00a651; /* Cor de destaque no hover */
+}
+
+.nav-links a.active {
+  color: #00a651;
+}
+
+.nav-links a.active::after {
+  width: 100%;
+  background-color: #00a651;
+}
